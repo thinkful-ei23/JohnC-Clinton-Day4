@@ -2,8 +2,11 @@
 
 $(function(){
   $('.thumbnail').on('click', function(event) {
-    const newImg = event.currentTarget.attr('src');
+    const newImg = $(event.target).attr('src');
+    const newAlt = $(event.target).attr('alt');
+    console.log(newImg);
     $('.hero img').attr('src', newImg);
+    $('.hero img').attr('alt', newAlt);
   });
 });
 

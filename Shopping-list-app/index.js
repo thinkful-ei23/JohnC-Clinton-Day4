@@ -1,9 +1,10 @@
+'use strict';
+
 function addItem(){
     
 
     $('#js-shopping-list-form').submit(function(event){
         const newItem = $(event.currentTarget).find('.input').val()
-        console.log(newItem)
         event.preventDefault()
        $('ul').append(`<li>
         <span class="shopping-item">${newItem}</span>
@@ -20,5 +21,13 @@ function addItem(){
 
 }
 
+function checkItem() {
+  $('.shopping-item-toggle').click(function(event) {
+    // $(event.target).closest($('.shopping-item')).toggleClass('shopping-item__checked');
+    $(event.target).closest('li').find('.shopping-item').toggleClass('shopping-item__checked');
+    // console.log($(event.target).closest($('.shopping-item')));
+  });
+}
+
 addItem()
-console.log('hello');
+checkItem()
